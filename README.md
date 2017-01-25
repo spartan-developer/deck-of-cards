@@ -1,4 +1,4 @@
-# Nick's "deck of cards" implementation in Java and Elm
+## Nick's "deck of cards" implementation in Java and Elm
 
 To run the JUnit tests:
 * cd java-implementation
