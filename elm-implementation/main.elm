@@ -32,15 +32,15 @@ view {deck, currentCard} = div [class "container"] [
   Html.node "link" [ Html.Attributes.rel "stylesheet", Html.Attributes.href "bootstrap/bootstrap-theme.min.css" ] [],
   h1 [style [("text-align", "center")]] [text "Deck of Cards"],
   div [class "row"] [
-    div [class "col-sm-2"] [h2 [style [("margin-top", "0")]] [text (toString (length deck) ++ " remaining: ")]],
-    div [class "col-sm-10"] (map Card.render deck)
+    div [class "col-sm-3"] [h2 [style [("margin-top", "0")]] [text (toString (length deck) ++ " remaining: ")]],
+    div [class "col-sm-9"] (map Card.render deck)
     ],
   hr [] [],
   case currentCard of
     Nothing -> text ""
     Just cardNumber -> div [class "row"] [
-      div [class "col-sm-2"] [h2 [style [("margin-top", "0")]] [text "You drew:"]],
-      div [class "col-sm-10"] [Card.render cardNumber]
+      div [class "col-sm-3"] [h2 [style [("margin-top", "0")]] [text "You drew:"]],
+      div [class "col-sm-9"] [Card.render cardNumber]
       ],
   div [style [("text-align", "center")]] [
     button [disabled (length deck < 2), onClick GenerateRandomInt, class "btn btn-info margin"] [text "Shuffle"],
